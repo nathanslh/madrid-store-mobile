@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:madrid_store/widgets/left_drawer.dart';
 
 class ProductFormPage extends StatefulWidget {
-  
+
   const ProductFormPage({super.key});
 
   @override
@@ -33,7 +33,7 @@ class _ProductFormPageState extends State<ProductFormPage> {
             'Add Product Form',
           ),
         ),
-        backgroundColor: Colors.indigo,
+        backgroundColor: Theme.of(context).colorScheme.primary,
         foregroundColor: Colors.white,
       ),
       drawer: const LeftDrawer(),
@@ -174,7 +174,9 @@ class _ProductFormPageState extends State<ProductFormPage> {
                   padding: const EdgeInsets.all(8.0),
                   child: ElevatedButton(
                     style: ButtonStyle(
-                      backgroundColor: WidgetStateProperty.all(Colors.indigo),
+                      backgroundColor: WidgetStateProperty.all(
+                        Theme.of(context).colorScheme.primary,
+                      ),
                     ),
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
