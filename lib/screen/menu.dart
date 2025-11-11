@@ -5,7 +5,6 @@ import 'package:madrid_store/widgets/product_card.dart';
 class MyHomePage extends StatelessWidget {
     MyHomePage({super.key});
 
-    
     final String nama = "Natan Harum Panogu Silalahi";
     final String npm = "2406496170";
     final String kelas = "E";

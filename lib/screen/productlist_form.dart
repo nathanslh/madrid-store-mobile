@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:madrid_store/widgets/left_drawer.dart';
 
 class ProductFormPage extends StatefulWidget {
+  
   const ProductFormPage({super.key});
 
   @override

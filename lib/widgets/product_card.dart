@@ -4,7 +4,6 @@ import 'package:madrid_store/screen/productlist_form.dart';
 
 class ItemCard extends StatelessWidget {
   // Menampilkan kartu dengan ikon dan nama.
-
   final ItemHomepage item; 
 
   const ItemCard(this.item, {super.key}); 
