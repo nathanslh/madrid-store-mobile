@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:madrid_store/screen/menu.dart';
-import 'package:madrid_store/screen/productlist_form.dart';
+import 'package:madrid_store/screens/menu.dart';
+import 'package:madrid_store/screens/productlist_form.dart';
+import 'package:madrid_store/screens/product_entry_list.dart';
 
 class LeftDrawer extends StatelessWidget {
   
@@ -55,13 +56,24 @@ class LeftDrawer extends StatelessWidget {
           ListTile(
             leading: const Icon(Icons.post_add),
             title: const Text('Add Product'),
-            // Bagian redirection ke NewsFormPage
+            // Bagian redirection ke ProductFormPage
             onTap: () {
               Navigator.pushReplacement(
                 context,
                 MaterialPageRoute(
                   builder: (context) => ProductFormPage(),
                 ),
+              );
+            },
+          ),
+          ListTile(
+            leading: const Icon(Icons.add_reaction_rounded),
+            title: const Text('Product List'),
+            onTap: () {
+              // Route to product list page
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ProductEntryListPage()),
               );
             },
           ),
