@@ -1,9 +1,3 @@
-# Dokumentasi Jawaban Tugas Flutter (Tugas 7 & 8)
-
-Dokumen ini berisi penjelasan mendalam mengenai konsep-konsep dasar Flutter dan implementasinya dalam proyek aplikasi toko.
-
----
-
 ## Tugas 7: Konsep Dasar Flutter
 
 ### 1. Widget Tree dan Hubungan Induk-Anak (Parent-Child)
