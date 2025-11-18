@@ -141,10 +141,11 @@ Warna tema disesuaikan di file `main.dart` menggunakan konfigurasi tema berbasis
 * **Penerapan Warna:** Digunakan `ColorScheme.fromSeed()` dengan menetapkan warna **Kuning Emas (`#EAB308`)** sebagai warna `primary` dan warna **Putih** sebagai `secondary`. Warna ini dipilih untuk mencerminkan identitas visual toko (misalnya, Real Madrid).
 * **Konsistensi:** Dengan mengakses warna melalui **`Theme.of(context).colorScheme.primary`** di semua komponen (seperti `AppBar`, tombol, dan *background*), warna tema yang telah ditentukan akan otomatis diterapkan, memastikan konsistensi visual di seluruh aplikasi tanpa perlu *hardcode* warna di setiap widget.
 
+---
 
 ---
 
-## Tugas 9: Integrasi Layanan Web Django dengan Aplikasi Flutter
+## Tugas 9
 
 ### 1. Soal jelaskan mengapa kita perlu membuat model Dart saat mengambil/mengirim data JSON? Apa konsekuensinya jika langsung memetakan Map<String, dynamic> tanpa model (terkait validasi tipe, null-safety, maintainability)?
 
