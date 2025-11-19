@@ -6,21 +6,19 @@ import 'package:madrid_store/screens/product_detail.dart';
 import 'package:provider/provider.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 
-class ProductEntryListPage extends StatefulWidget {
-  const ProductEntryListPage({super.key});
+class AllProductsPage extends StatefulWidget {
+  const AllProductsPage({super.key});
 
   @override
-  State<ProductEntryListPage> createState() => _ProductEntryListPageState();
+  State<AllProductsPage> createState() => _AllProductsPageState();
 }
 
-class _ProductEntryListPageState extends State<ProductEntryListPage> {
-  Future<List<ProductEntry>> fetchProducts(CookieRequest request) async {
-    final response = await request.get('http://localhost:8000/my-products-flutter/');
+class _AllProductsPageState extends State<AllProductsPage> {
+  Future<List<ProductEntry>> fetchAllProducts(CookieRequest request) async {
+    final response = await request.get('http://localhost:8000/products-flutter/');
     
-    // Decode response to json format
     var data = response;
     
-    // Convert json data to ProductEntry objects
     List<ProductEntry> listProducts = [];
     for (var d in data) {
       if (d != null) {
@@ -35,13 +33,13 @@ class _ProductEntryListPageState extends State<ProductEntryListPage> {
     final request = context.watch<CookieRequest>();
     return Scaffold(
       appBar: AppBar(
-        title: const Text('My Products'),
+        title: const Text('All Products'),
         backgroundColor: Theme.of(context).colorScheme.primary,
         foregroundColor: Colors.white,
       ),
       drawer: const LeftDrawer(),
       body: FutureBuilder(
-        future: fetchProducts(request),
+        future: fetchAllProducts(request),
         builder: (context, AsyncSnapshot snapshot) {
           if (snapshot.data == null) {
             return const Center(child: CircularProgressIndicator());
@@ -51,7 +49,7 @@ class _ProductEntryListPageState extends State<ProductEntryListPage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    'You have not added any products yet.',
+                    'There are no products in the store yet.',
                     style: TextStyle(fontSize: 20, color: Color(0xff59A5D8)),
                   ),
                   SizedBox(height: 8),
@@ -63,7 +61,7 @@ class _ProductEntryListPageState extends State<ProductEntryListPage> {
                 itemBuilder: (_, index) => ProductEntryCard(
                   product: snapshot.data![index],
                   onTap: () {
-                    // Navigate to product detail page
+                    // Bagian redirection ke ProductDetailPage
                     Navigator.push(
                       context,
                       MaterialPageRoute(

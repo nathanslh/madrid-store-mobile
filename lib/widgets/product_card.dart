@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:madrid_store/screens/productlist_form.dart';
 import 'package:madrid_store/screens/product_entry_list.dart';
+import 'package:madrid_store/screens/all_products.dart';
 import 'package:madrid_store/screens/login.dart';
 import 'package:pbp_django_auth/pbp_django_auth.dart';
 import 'package:provider/provider.dart';
@@ -37,11 +38,18 @@ class ItemCard extends StatelessWidget {
                 builder: (context) => ProductFormPage(),
               ),
             ); 
-          } else if (item.name == "See Products") {
+          } else if (item.name == "All Products") {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => ProductEntryListPage(),
+                builder: (context) => const AllProductsPage(),
+              ),
+            ); 
+          } else if (item.name == "My Products") {
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const ProductEntryListPage(),
               ),
             ); 
           } else if (item.name == "Logout") {
